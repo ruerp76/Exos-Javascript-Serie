@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/'vivify.min.css'">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <title>Exo 5 - JS Série</title>
+  </head>
+  <body class="vivify fadeIn">
+    <header>
+          <a href="exercice4.html"><i class="far fa-arrow-alt-circle-left"></i></a>
+          <h1>Exercice 5 - JavaScript Série</h1>
+          <a href="exercice6.html"><i class="far fa-arrow-alt-circle-right"></i></a>
+    </header>
+    <h3>But de l'exercice</h3>
+
+      <p>Créer une fonction qui demande l'âge de l'utilisateur<br/>
+        Afficher le nombre de jours vécus que cela représente
+      (exemple avec 21 : "Vous avez vécu 7665 jours.")</p>
+
+      <hr></hr>
+
+      <h4>Test de l'exercice</h4>
+
+    <form>
+      <label for="">Entrez votre âge: </label>
+      <input class="chiffre" type="number" name="chiffre1" value="87">
+      <input type="button" name="valide" value="Calculer" id="bouton">
+    </form>
+
+    <script type="text/javascript">
+
+    var resultat = document.getElementById('bouton').addEventListener('click', (calcul) => {
+    var nb1 = document.getElementsByClassName('chiffre')[0].value;
+
+    var result = nb1*365;
+    var p = document.createElement('p');
+    p.setAttribute("class", "vivify popIn");
+    p.innerHTML = "Vous avez vécu " + result + " jours";
+    p.style.color = "green";
+    document.body.appendChild(p);
+
+    var ligne = document.createElement('hr');
+        document.body.appendChild(ligne);
+
+    var basPage = document.createElement('p');
+        basPage.innerHTML = "Exercice 5 réalisé avec succès !"
+        basPage.style.color = "green";
+        document.body.appendChild(basPage);
+
+  });
+
+    </script>
+  </body>
+</html>

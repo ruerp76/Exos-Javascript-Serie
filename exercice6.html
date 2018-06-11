@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/'vivify.min.css'">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <title>Exo 6 - JS Série</title>
+  </head>
+  <body class="vivify fadeIn">
+    <header>
+    <a href="exercice5.html"><i class="far fa-arrow-alt-circle-left"></i></a>
+    <h1>Exercice 6 - JavaScript Série</h1>
+    <a href="exercice7.html"><i class="far fa-arrow-alt-circle-right"></i></a>
+  </header>
+    <h3>But de l'exercice</h3>
+
+      <p>Demander l'âge actuel de l'utilisateur et un âge visé (vous aurez donc besoin de deux champs).<br/>
+          Afficher le nombre de jours vécus que cela représente et l'écart avec l'âge visé. <br/>
+          Exemple avec 21 et 45 : "Vous avez vécu 7665 jours. Il y a encore 8760 jours avant vos 45 ans."<br/>
+          Complément : si l'âge visé est plus petit que l'âge actuel, signaler l'erreur (alert ou affichage dans la page)</p>
+
+      <hr></hr>
+
+      <h4>Test de l'exercice</h4>
+
+    <form>
+      <label for="">Entrez votre âge: </label>
+      <input class="chiffre" type="text" name="chiffre1" value="">
+      <label for="">Age visé: </label>
+      <input class="chiffre" type="text" name="chiffre2" value=87>
+      <input type="button" name="valide" value="Calculer" id="bouton">
+    </form>
+
+    <script type="text/javascript">
+
+    var resultat = document.getElementById('bouton').addEventListener('click', (calcul) => {
+    var nb1 = document.getElementsByClassName('chiffre')[0].value;
+    var resultNb1 = nb1*365;
+    var nb2 = document.getElementsByClassName('chiffre')[1].value
+    var resultNb2 = (nb2*365)-resultNb1;
+
+    var p = document.createElement('p');
+    p.setAttribute("class", "vivify popIn");
+    p.innerHTML = "Vous avez vécu "+resultNb1+" jours. Il reste "+resultNb2+" pour atteindre l'âge de "+nb2+" ans.";
+    p.style.color = "green";
+    document.body.appendChild(p);
+    var effacer = document.getElementsByClassName('chiffre')[0].value="";
+
+    var ligne = document.createElement('hr');
+        document.body.appendChild(ligne);
+
+    var basPage = document.createElement('p');
+        basPage.innerHTML = "Exercice 6 réalisé avec succès !"
+        basPage.style.color = "green";
+        document.body.appendChild(basPage);
+  });
+
+    </script>
+  </body>
+</html>

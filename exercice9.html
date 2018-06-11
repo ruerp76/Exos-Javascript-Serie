@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/'vivify.min.css'">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+    <title>Exo 9 - JS Série</title>
+  </head>
+  <body class="vivify fadeIn">
+    <header>
+    <a href="exercice8.html"><i class="far fa-arrow-alt-circle-left"></i></a>
+    <h1>Exercice 9 - JavaScript Série</h1>
+    <a href="exercice10.html"><i class="far fa-arrow-alt-circle-right"></i></a>
+  </header>
+
+  <h3>But de l'exercice</h3>
+
+    <p>Créer une liste de courses, ajouter un champ de texte et un bouton.</br>
+       - Au click sur un bouton, ajoutez le contenu du champ à la liste.</br>
+      - Attention à vider le champ une fois le celui-ci ajouté
+       et de ne rien faire s'il n'est pas renseigné.</p>
+
+    <hr></hr>
+
+    <h4>Test de l'exercice</h4>
+
+<form class="" action="index.html" method="post">
+  <label for="">Ajouter un produit à la liste</label>
+  <input type="text" id='text' name="" value=" ">
+  <button type="button" id='bouton' name="button">Ajouter</button>
+  <button type="button" id='bouton2' name="button">Voir la liste</button>
+
+</form>
+
+<script type="text/javascript">
+
+        var liste =['pain',' salade',' poulet',' jambon'];
+        // liste.sort();
+        var btnAjout = document.getElementById('bouton').addEventListener("click", (ajouter) => {
+          var ajout = document.getElementById('text').value;
+
+          if (ajout == 0) {
+            var p = document.createElement('p');
+                p.setAttribute("class", "vivify popIn");
+                p.innerHTML = "Le champ n'a pas été renseigné !!"
+                p.style.color = "red";
+                document.body.appendChild(p);
+          }
+          else {
+              var nouveau = liste.push(ajout);
+              var p = document.createElement('p');
+                  p.setAttribute("class", "vivify popIn");
+                  p.innerHTML = "Le produit "+ajout+" a bien été ajouté à votre liste de courses (Pour afficher, cliquez sur Voir la liste)";
+                  p.style.color = "green";
+                  document.body.appendChild(p);
+
+              var effacer = document.getElementById('text').value="";
+              console.log(liste);
+        }
+      });
+
+        var affichListe = document.getElementById('bouton2').addEventListener("click", (selection) => {
+          var p = document.createElement('p');
+              p.setAttribute("class", "vivify popIn");
+              p.innerHTML = liste;
+              document.body.appendChild(p);
+
+              console.log(liste);
+
+              var ligne = document.createElement('hr');
+                  document.body.appendChild(ligne);
+        });
+</script>
+
+
+  </body>
+</html>

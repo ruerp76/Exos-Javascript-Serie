@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/'vivify.min.css'">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+    <title>Exo 2 - JS Série</title>
+  </head>
+  <body class="vivify fadeIn">
+    <header>
+    <a href="exercice1.html"><i class="far fa-arrow-alt-circle-left"></i></a>
+    <h1>Exercice 2 - JavaScript Série</h1>
+    <a href="exercice3.html"><i class="far fa-arrow-alt-circle-right"></i></a>
+  </header>
+
+    <h3>But de l'exercice</h3>
+
+      <p>Créer un champ de texte, au clic sur un bouton,<br/>
+      changer la couleur de fond de la page avec la couleur donnée par l'utilisateur</p>
+
+      <hr></hr>
+
+      <h4>Test de l'exercice</h4>
+
+    <div class="container">
+
+      <div id="div1"></div>
+
+
+      <script>
+
+      // Exercice 2
+
+          var p2 = document.createElement('p');
+          p2.innerHTML = "Sélectionnez une couleur: ";
+          document.body.appendChild(p2);
+
+      // Création Input Couleur
+        var champ = document.createElement('input');
+            champ.setAttribute("type", "color");
+            champ.setAttribute("id", "enterColor");
+            champ.setAttribute("value", "Couleur");
+            document.body.appendChild(champ);
+
+        // Création du bouton Valider
+        var bouton = document.createElement("input");
+            bouton.setAttribute("type", "button");
+            bouton.setAttribute("name", "bouton");
+            bouton.setAttribute("id", "bouton2");
+            bouton.setAttribute("value", "Valider");
+            document.body.appendChild(bouton);
+
+        // Remplacement couleur de la div
+            var Color = document.getElementById('bouton2').addEventListener('click', (changeColor) => {
+              var saisie = document.getElementById('enterColor');
+              var toto = document.getElementById('div1');
+              var a = toto.style.backgroundColor = saisie.value;
+                      toto.style.boxShadow = "2px 2px 5px grey";
+                      toto.style.borderRadius = "20px";
+
+        // Création d'un paragraphe
+              var p = document.createElement('p');
+                  p.setAttribute("class", "vivify popIn");
+                  p.innerHTML = "Le code hexadecimal de la couleur sélectionnée est: " + a;
+                  p.style.color = a;
+                  document.body.appendChild(p);
+
+                  var ligne = document.createElement('hr');
+                      document.body.appendChild(ligne);
+
+                  var basPage = document.createElement('p');
+                      basPage.innerHTML = "Exercice 2 réalisé avec succès !"
+                      basPage.style.color = "green";
+                      document.body.appendChild(basPage);
+            });
+
+      </script>
+    </div>
+  </body>
+</html>

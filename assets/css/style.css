@@ -1,0 +1,84 @@
+
+body{
+  width: 900px;
+  margin: auto;
+  text-align: center;
+  font-family: "Comic Sans MS", cursive;
+  font-weight: lighter;
+  color: grey;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+i{
+  font-size: 2em;
+}
+
+a:hover{
+  color: blue;
+  transition: 1s;
+}
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+#div1{
+  width: 500px;
+  height: 200px;
+  border: 1px solid grey;
+  margin-top: 20px;
+  background-color: #237FC5;
+  box-shadow: 1px 1px 8px #5D2606;
+  border-radius: 20px;
+}
+
+#bouton{
+  color: green;
+  cursor: pointer;
+}
+
+#bouton2{
+  cursor: pointer;
+}
+
+#bouton2:hover{
+  color:green;
+}
+
+#enterColor{
+  width: 25%;
+  height: 20px;
+  cursor: pointer;
+}
+
+#enterImg{
+  margin-bottom: 20px;
+}
+
+#img2{
+  border-radius: 20px;
+  border: 1px black;
+  box-shadow: 1px 1px 8px black;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+#nombre{
+  width: 40px;
+  text-align: center;
+}
+
+.chiffre{
+  width: 40px;
+  text-align: center;
+}
+
+.chiffre2{
+  width: 50px;
+  text-align: center;
+}

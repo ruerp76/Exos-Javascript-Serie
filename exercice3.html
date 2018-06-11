@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/'vivify.min.css'">
+    <title>Exo 3 - JS Série</title>
+  </head>
+  <body class="vivify fadeIn">
+    <header>
+    <a href="exercice2.html"><i class="far fa-arrow-alt-circle-left"></i></a>
+    <h1>Exercice 3 - JavaScript Série</h1>
+    <a href="exercice4.html"><i class="far fa-arrow-alt-circle-right"></i></a>
+  </header>
+    <h3>But de l'exercice</h3>
+
+      <p>Demander l'adresse d'une image à l'utilisateur via un champ de texte.</br>
+          Au clic sur un bouton, ajouter cette image à la page.</p>
+
+      <hr></hr>
+
+      <h4>Test de l'exercice</h4>
+
+      <p>Copiez-collez l'url ci-dessous pour tester.</p>
+
+        <p class="vivify popIn">http://www.fairymist.fr/wp-content/uploads/2018/04/static1.squarespace.com_.png</p>
+
+
+    <div class="container">
+      <script>
+
+      // Exercice 3
+
+      // Création Input URL img
+        var champ = document.createElement('input');
+            champ.setAttribute("type", "text");
+            champ.setAttribute("id", "enterImg");
+            champ.setAttribute("value", "");
+            champ.setAttribute("placeholder", "Entrez l'url de l'image");
+            document.body.appendChild(champ);
+
+        // Création du bouton Afficher
+        var bouton = document.createElement("input");
+            bouton.setAttribute("type", "button");
+            bouton.setAttribute("name", "bouton");
+            bouton.setAttribute("id", "bouton2");
+            bouton.setAttribute("value", "afficher");
+            document.body.appendChild(bouton);
+
+        // Affichage de l'image
+            var affichImg = document.getElementById('bouton2').addEventListener('click', (afficher) => {
+              var saisie = document.getElementById('enterImg').value;
+
+              var b = document.createElement('img');
+                  b.setAttribute("class", "vivify popIn");
+                  b.setAttribute('src', saisie);
+                  b.setAttribute("id", "img2");
+                  document.body.appendChild(b);
+
+              var ligne = document.createElement('hr');
+                  document.body.appendChild(ligne);
+
+              var basPage = document.createElement('p');
+                  basPage.innerHTML = "Exercice 3 réalisé avec succès !"
+                  basPage.style.color = "green";
+                  document.body.appendChild(basPage);
+
+            });
+          </script>
+    </div>
+  </body>
+</html>

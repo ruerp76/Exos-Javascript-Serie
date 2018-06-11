@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/'vivify.min.css'">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <title>Exo 7 - JS Série</title>
+  </head>
+  <body class="vivify fadeIn">
+    <header>
+    <a href="exercice6.html"><i class="far fa-arrow-alt-circle-left"></i></a>
+    <h1>Exercice 7 - JavaScript Série</h1>
+    <a href="exercice8.html"><i class="far fa-arrow-alt-circle-right"></i></a>
+  </header>
+
+  <h3>But de l'exercice</h3>
+
+    <p>Documentation : étudiez le fonctionnement de confirm() en javascript. Créer un confirm() Javascript</br>
+    - Si l'utilisateur clique sur oui, afficher une image de smiley avec "un sourire..."</br>
+    - sinon, afficher une autre image de smiley avec "un air triste..."</p>
+
+    <hr></hr>
+
+    <h4>Test de l'exercice</h4>
+
+    <form class="" action="index.html" method="post">
+  <button type="button" id='bouton' name="button">Humeur du jour</button>
+</form>
+
+        <script>
+            var a = document.getElementById('bouton').addEventListener("click", (humeur) =>{
+            var createImg = document.createElement('img');
+            var p = document.createElement('p');
+            var c = confirm("Joyeux click ok sinon ....annuler !");
+
+              if (c == true) {
+                createImg.setAttribute("class", "vivify popIn");
+                createImg.setAttribute("src","assets/img/cool.png");
+                p.setAttribute("class", "vivify popIn");
+                p.style.color = "green";
+                p.innerHTML = "Tu es très joyeux visiblement !"
+                document.body.appendChild(p);
+              }
+
+              else{
+                createImg.setAttribute("class", "vivify shake");
+                createImg.setAttribute("src","assets/img/bad.png");
+                p.setAttribute("class", "vivify popIn");
+                p.style.color = "red";
+                p.innerHTML = "Pas vraiment ton jour donc......!"
+                document.body.appendChild(p);
+              }
+              document.body.appendChild(createImg);
+
+              var ligne = document.createElement('hr');
+                  document.body.appendChild(ligne);
+
+              var basPage = document.createElement('p');
+                  basPage.innerHTML = "Exercice 7 réalisé avec succès !"
+                  basPage.style.color = "green";
+                  document.body.appendChild(basPage);
+        });
+
+        </script>
+
+
+
+
+  </body>
+</html>

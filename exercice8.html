@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/'vivify.min.css'">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+    <title>Exo 8 - JS Série</title>
+  </head>
+  <body class="vivify fadeIn">
+    <header>
+    <a href="exercice7.html"><i class="far fa-arrow-alt-circle-left"></i></a>
+    <h1>Exercice 8 - JavaScript Série</h1>
+    <a href="exercice9.html"><i class="far fa-arrow-alt-circle-right"></i></a>
+  </header>
+
+  <h3>But de l'exercice</h3>
+
+    <p>Demander un nombre entre 0 et 5 à l'utilisateur.</br>
+       - Si l'utilisateur n'entre pas un nombre entre 0 et 5, le signaler par une alert.</br>
+       - Si le nombre est valide, l'afficher en toutes lettres (1 => "un")"</p>
+
+    <hr></hr>
+
+    <h4>Test de l'exercice</h4>
+
+    <form class="" action="index.html" method="post">
+<label for="">Veuillez entrer un chiffre compris entre 1 et 5: </label>
+<input type="text" id="nombre" name="" value="">
+<button type="button" id='bouton' name="button">Cliquez</button>
+</form>
+
+        <script type="text/javascript">
+              var a = document.getElementById('bouton');
+              a.addEventListener("click", controle => {
+              var b = document.getElementById('nombre').value;
+              var confirmNumb = document.createElement('p');
+
+                      if ((b > 0) && (b < 6)) {
+                      if (b == 1) {
+                        confirmNumb.setAttribute("class", "vivify popIn");
+                        confirmNumb.innerHTML = '1 => " Un "';
+                        confirmNumb.style.color = "green";
+                        document.body.appendChild(confirmNumb);
+                        var effacer = document.getElementById('nombre').value="";
+                      }
+                      else if (b == 2) {
+                        confirmNumb.setAttribute("class", "vivify popIn");
+                        confirmNumb.innerHTML = '2 => " Deux "';
+                        confirmNumb.style.color = "green";
+                        document.body.appendChild(confirmNumb);
+                        var effacer = document.getElementById('nombre').value="";
+                      }
+                      else if (b == 3) {
+                        confirmNumb.setAttribute("class", "vivify popIn");
+                        confirmNumb.innerHTML = '3 => " Trois "';
+                        confirmNumb.style.color = "green";
+                        document.body.appendChild(confirmNumb);
+                        var effacer = document.getElementById('nombre').value="";
+                      }
+                      else if (b == 4) {
+                        confirmNumb.setAttribute("class", "vivify popIn");
+                        confirmNumb.innerHTML = '4 => " Quatre "';
+                        confirmNumb.style.color = "green";
+                        document.body.appendChild(confirmNumb);
+                        var effacer = document.getElementById('nombre').value="";
+                      }
+                      else if (b == 5) {
+                        confirmNumb.setAttribute("class", "vivify popIn");
+                        confirmNumb.innerHTML = '5 => " Cinq "';
+                        confirmNumb.style.color = "green";
+                        document.body.appendChild(confirmNumb);
+                        var effacer = document.getElementById('nombre').value="";
+                      }
+                      }else {
+                        confirmNumb.setAttribute("class", "vivify popIn");
+                        confirmNumb.innerHTML = "<i class=\"far fa-times-circle\"></i> La saisie est incorrecte !";
+                        confirmNumb.style.color = "red";
+                        var f = document.getElementById('nombre');
+                        f.style.color = "red";
+                        document.body.appendChild(confirmNumb);
+                      }
+
+              var ligne = document.createElement('hr');
+                  document.body.appendChild(ligne);
+
+              var basPage = document.createElement('p');
+                  basPage.innerHTML = "Exercice 8 réalisé avec succès !"
+                  basPage.style.color = "green";
+                  document.body.appendChild(basPage);
+              });
+        </script>
+
+</body>
+</html>

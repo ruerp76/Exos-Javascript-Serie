@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/'vivify.min.css'">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <title>Exo 4 - JS Série</title>
+  </head>
+  <body class="vivify fadeIn">
+    <header>
+    <a href="exercice3.html"><i class="far fa-arrow-alt-circle-left"></i></a>
+    <h1>Exercice 4 - JavaScript Série</h1>
+    <a href="exercice5.html"><i class="far fa-arrow-alt-circle-right"></i></a>
+  </header>
+    <h3>But de l'exercice</h3>
+
+      <p>- demander un nombre à l'utilisateur - calculer le modulo de ce nombre divisé par 5
+      - Afficher le reste dans une phrase.
+       (exemple avec 21 : "Si l'on divise 21 par 5, le reste est de 1")</p>
+
+      <hr></hr>
+
+      <h4>Test de l'exercice</h4>
+
+    <form>
+      <label for="">Entrez un nombre: </label>
+      <input class="chiffre2" type="number" name="chiffre1" value="">
+      <input type="button" name="valide" value="Calculer" id="bouton">
+    </form>
+
+    <script type="text/javascript">
+
+    var resultat = document.getElementById('bouton').addEventListener('click', (calcul) => {
+    var nb1 = document.getElementsByClassName('chiffre2')[0].value;
+
+    var result = nb1%5;
+
+    if (isNaN(nb1) || nb1 ==""){
+      var p = document.createElement('p');
+      p.setAttribute("class", "vivify popIn");
+      p.style.color = "red";
+      p.innerHTML = "<i class=\"far fa-times-circle\"></i> Veuillez saisir un nombre, svp..... !";
+      document.body.appendChild(p);
+    }
+
+    else{
+
+    var p = document.createElement('p');
+    p.setAttribute("class", "vivify popIn")
+    p.innerHTML = "Le résultat est: " + result;
+    p.style.color = "green";
+    document.body.appendChild(p);
+
+  }
+
+    var ligne = document.createElement('hr');
+        document.body.appendChild(ligne);
+
+    var basPage = document.createElement('a');
+        basPage.setAttribute("href", "exercice5.html");
+        basPage.innerHTML = "Exercice suivant"
+        basPage.style.color = "green";
+        basPage.style.textDecoration = "none";
+        document.body.appendChild(basPage);
+  });
+
+    </script>
+  </body>
+</html>

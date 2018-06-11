@@ -1,0 +1,100 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/'vivify.min.css'">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
+    <title>Exo 10 - JS Série</title>
+  </head>
+  <body class="vivify fadeIn">
+    <header>
+    <a href="exercice9.html"><i class="far fa-arrow-alt-circle-left"></i></a>
+    <h1>Exercice 10 - JavaScript Série</h1>
+    <a href="exercice11.html"><i class="far fa-arrow-alt-circle-right"></i></a>
+  </header>
+
+  <h3>But de l'exercice</h3>
+
+    <p>Définir un nombre à deviner (et pourquoi pas avec Math.random()?).</br>
+       Récupérer un nombre entré par l'utilisateur.</br>
+     - Si le nombre de l'utilisateur est plus grand que celui à deviner, afficher "Trop grand !"</br>
+     - Si le nombre de l'utilisateur est plus petit que celui à deviner, afficher "Trop petit !"</br>
+     - Si le nombre est identique au nombre à deviner, afficher "Gagné!"</p>
+
+    <hr></hr>
+
+    <h4>Test de l'exercice</h4>
+
+    <form class="" action="index.html" method="post">
+  <button class="bouton2" type="button" name="button">Générez un chiffre entre 1 & 9</button>
+  <label for="">Devinez le chiffre</label>
+  <input type="number" id="nombre" name="" value="" step="1" min="1" max="9" >
+  <button class="bouton2" type="button" name="button">VALIDER</button>
+</form>
+
+<script>
+
+    var rand_chf;
+
+    var clk_rdm = document.getElementsByClassName("bouton2")[0].addEventListener('click', (nb1) => {
+      var p = document.createElement('p');
+      p.setAttribute("class", "vivify popIn");
+      p.style.color = "green";
+      p.innerHTML = "=> Le chiffre a bien été généré. <=";
+      document.body.appendChild(p);
+    });
+
+    function rdm_chf2(min, max) {
+      return Math.floor(Math.random()*(max-min + 1)) + min;
+    }
+
+    function nb1() {
+      rand_chf = rdm_chf2(1,9);
+      console.log(rand_chf);
+    }
+
+    var saisie = document.getElementsByClassName("bouton2")[1].addEventListener('click', (result) => {
+      var saisie2 = document.getElementById('nombre').value;
+
+      if (isNaN(saisie2) || saisie2 ==""){
+        var p = document.createElement('p');
+        p.setAttribute("class", "vivify popIn");
+        p.style.color = "red";
+        p.innerHTML = "<i class=\"far fa-times-circle\"></i> La saisie est incorrecte !";
+        document.body.appendChild(p);
+      }
+
+      else if (saisie2 < rand_chf){
+        var p = document.createElement('p');
+        p.setAttribute("class", "vivify popIn");
+        p.style.color = "red";
+        p.innerHTML = "<i class=\"far fa-times-circle\"></i> Désolé le chiffre est trop petit !";
+        document.body.appendChild(p);
+      }
+
+      else if (saisie2 == rand_chf) {
+        var p = document.createElement('p');
+        p.setAttribute("class", "vivify popIn");
+        p.style.color = "green";
+        p.innerHTML = "<i class=\"far fa-check-circle\"></i> Bravo tu as gagné !";
+        document.body.appendChild(p);
+      }
+
+      else {
+        var p = document.createElement('p');
+        p.setAttribute("class", "vivify popIn");
+        p.style.color = "red";
+        p.innerHTML = "<i class=\"far fa-times-circle\"></i> Désolé le chiffre est trop grand !";
+        document.body.appendChild(p);
+      }
+
+      var ligne = document.createElement('hr');
+          document.body.appendChild(ligne);
+    });
+
+</script>
