@@ -1,4 +1,5 @@
 ![Javascript](https://i.gifer.com/8OGO.gif)
+[Preview](https://htmlpreview.github.io/?https://github.com/ruerp76/Exos-Javascript-Serie/blob/master/exercice1.html)
 ### EXERCICE 1
 * demander deux nombres à l'utilisateur (dans deux champs distincts)
 * au clic sur un bouton, afficher le résultat de la multplication
